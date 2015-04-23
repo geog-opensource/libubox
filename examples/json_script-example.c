@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <json.h>
 #include "blobmsg.h"
 #include "blobmsg_json.h"
+#ifdef JSONC
+        #include <json.h>
+#else
+        #include <json/json.h>
+#endif
+
 #include "json_script.h"
 
 struct json_script_ctx	jctx;
