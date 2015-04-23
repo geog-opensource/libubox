@@ -32,7 +32,7 @@ handle_file(struct json_script_ctx *ctx, const char *filename)
 {
 	json_object *obj;
 
-	obj = json_object_from_file(filename);
+	obj = json_object_from_file((char *)filename);
 	if (!obj) {
 		fprintf(stderr, "load JSON data from %s failed.\n", filename);
 		return NULL;
